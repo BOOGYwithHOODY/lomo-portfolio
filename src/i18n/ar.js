@@ -7,7 +7,7 @@ export default {
   'nav.journal':  'المدوّنة',
   'nav.contact':  'تواصل',
   'nav.cta':      'لنتحدّث',
-  'nav.email':    'hello@lomo.studio',
+  'nav.email':    'hello@lomospace.com',
 
   // ── Hero
   'hero.eyebrow':         'مصمّم جرافيك وموشن — مقيم في الرياض، المملكة العربية السعودية',

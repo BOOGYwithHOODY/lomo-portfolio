@@ -132,8 +132,8 @@ export default function Contact() {
           <aside className="lg:col-span-4 space-y-10">
             <FadeIn>
               <Label>{t('contact.direct')}</Label>
-              <a href="mailto:hello@lomo.studio" className="group inline-flex items-center gap-2 font-heading text-xl lg:text-2xl text-bright hover:text-muted transition-colors">
-                <Mail size={18} /> hello@lomo.studio
+              <a href="mailto:hello@lomospace.com" className="group inline-flex items-center gap-2 font-heading text-xl lg:text-2xl text-bright hover:text-muted transition-colors">
+                <Mail size={18} /> hello@lomospace.com
               </a>
             </FadeIn>
 

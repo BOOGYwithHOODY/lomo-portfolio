@@ -75,11 +75,11 @@ export default function Footer() {
           {/* Email link */}
           <FadeIn delay={0.25} className="flex flex-col sm:flex-row sm:items-center justify-between gap-8">
             <a
-              href="mailto:hello@lomo.studio"
+              href="mailto:hello@lomospace.com"
               className="group inline-flex items-center gap-3 font-heading text-lg lg:text-2xl text-bright hover:text-muted transition-colors"
             >
               <Mail size={20} strokeWidth={1.5} className="shrink-0" />
-              hello@lomo.studio
+              hello@lomospace.com
               <ArrowUpRight
                 size={16}
                 strokeWidth={1.5}

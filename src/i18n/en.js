@@ -7,7 +7,7 @@ export default {
   'nav.journal':  'Journal',
   'nav.contact':  'Contact',
   'nav.cta':      "Let's Talk",
-  'nav.email':    'hello@lomo.studio',
+  'nav.email':    'hello@lomospace.com',
 
   // ── Hero
   'hero.eyebrow':         'Graphic & Motion Designer — Based in Riyadh, KSA',

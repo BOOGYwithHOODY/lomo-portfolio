@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lomo.studio/sitemap.xml
+Sitemap: https://lomospace.com/sitemap.xml
