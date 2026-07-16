@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Mo Designs Studio — brand identities, editorial design and motion from Riyadh. Design that speaks. Systems that last." />
+<title>MO\Studio — Design that speaks. Systems that last.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  /* ═══════════════════════════════════════════════
+     MO\Studio — one-page site
+     Modeled on a modern agency one-pager structure:
+     hero / statement / work / services / bento /
+     team / journal / footer
+     ═══════════════════════════════════════════════ */
+  :root {
+    --dark:      #0d0d0e;
+    --dark-2:    #131315;
+    --light:     #f4f3f1;
+    --light-2:   #ffffff;
+    --ink:       #141414;
+    --ink-2:     #55555a;
+    --paper-ink: #9a9aa2;
+    --accent:    #ff5a2a;
+    --accent-2:  #ff7a4d;
+    --line-d:    rgba(255,255,255,.12);
+    --line-l:    rgba(0,0,0,.12);
+    --mono:      'Space Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--dark); color: #f2f2f2;
+    line-height: 1.5; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  img { max-width: 100%; display: block; }
+  section { position: relative; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  .mono { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+  .container { width: min(1280px, 100% - 48px); margin-inline: auto; }
+
+  /* ── Nav ─────────────────────────────────────── */
+  .nav {
+    position: fixed; inset-inline: 0; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 28px;
+    background: rgba(13,13,14,.82); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .logo { font-weight: 800; font-size: 20px; letter-spacing: -.02em; }
+  .logo em { font-style: normal; color: var(--accent); }
+  .nav-links { display: flex; gap: 26px; }
+  .nav-links a { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: #cfcfd4; position: relative; }
+  .nav-links a:hover { color: #fff; }
+  .nav-links sup {
+    font-size: 8px; background: #26262a; border: 1px solid var(--line-d);
+    border-radius: 4px; padding: 1px 4px; margin-inline-start: 4px; color: #bbb;
+  }
+  .nav .contact-link { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: #cfcfd4; }
+  .nav .contact-link:hover { color: var(--accent); }
+
+  /* ── Hero ────────────────────────────────────── */
+  .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(60% 50% at 72% 38%, rgba(255,90,42,.16), transparent 65%),
+      radial-gradient(45% 45% at 30% 70%, rgba(255,255,255,.05), transparent 60%),
+      var(--dark);
+  }
+  .hero-img {
+    position: absolute; inset: 0; opacity: .38;
+    background-image: url('https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=75');
+    background-size: cover; background-position: center;
+    filter: grayscale(35%) contrast(1.05);
+    mask-image: radial-gradient(85% 75% at 60% 45%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(85% 75% at 60% 45%, #000 30%, transparent 75%);
+  }
+  .hero-inner { position: relative; z-index: 2; width: min(1280px, 100% - 48px); margin-inline: auto; padding-top: 60px; }
+  .hero-kicker { display: flex; align-items: center; gap: 10px; color: #9a9aa0; margin-bottom: 18px; }
+  .hero-kicker .idx { color: #6c6c72; }
+  .hero h1 {
+    font-size: clamp(56px, 11vw, 152px); font-weight: 800; line-height: .95;
+    letter-spacing: -.03em;
+  }
+  .hero h1 .a { color: var(--accent); }
+  .hero h1 .b { color: #e9e9ec; }
+  .hero-scramble { margin-top: 26px; font-family: var(--mono); font-size: clamp(12px, 1.4vw, 15px); letter-spacing: .1em; text-transform: uppercase; color: #c9c9cf; min-height: 3.2em; white-space: pre-line; }
+  .hero-meta { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 34px; align-items: center; }
+  .hero-clock { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; color: #8f8f96; text-transform: uppercase; line-height: 1.7; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--accent); color: #fff; font-weight: 700; font-size: 14px;
+    padding: 15px 26px; border-radius: 10px;
+    transition: transform .2s ease, background .2s ease;
+  }
+  .cta-btn:hover { background: var(--accent-2); transform: translateY(-2px); }
+  .cta-btn svg { transition: translate .2s ease; }
+  .cta-btn:hover svg { translate: 4px 0; }
+
+  /* ── Statement ("we …") ──────────────────────── */
+  .statement {
+    background: var(--light) url('https://images.unsplash.com/photo-1515548212235-6b2e64a6a24a?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
+    background-blend-mode: luminosity;
+    color: var(--ink);
+    min-height: 130svh;
+  }
+  .statement::after { content: ''; position: absolute; inset: 0; background: rgba(244,243,241,.82); }
+  .statement-sticky {
+    position: sticky; top: 0; min-height: 100svh; z-index: 2;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  }
+  .statement-line {
+    font-size: clamp(52px, 10vw, 140px); font-weight: 800; letter-spacing: -.04em; line-height: 1.02;
+    color: #c9c7c2; transition: color .45s ease;
+  }
+  .statement-line.active { color: var(--ink); }
+  .statement-line em { font-style: normal; color: var(--accent); }
+
+  /* ── Work ────────────────────────────────────── */
+  .work-hero { min-height: 96svh; display: grid; place-items: center; overflow: hidden; }
+  .work-hero .bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .6s ease; transform: scale(1.03); }
+  .work-hero:hover .bg { transform: scale(1.07); }
+  .work-hero .veil { position: absolute; inset: 0; background: rgba(10,10,12,.44); }
+  .work-hero .center { position: relative; z-index: 2; text-align: center; padding: 0 20px; }
+  .work-hero .brand-tag { font-family: var(--mono); font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: rgba(255,255,255,.85); margin-bottom: 16px; }
+  .work-hero h3 { font-size: clamp(40px, 6.5vw, 88px); font-weight: 700; letter-spacing: -.02em; color: #fff; line-height: 1.02; }
+  .work-hero .cat { font-family: var(--mono); font-size: 11.5px; letter-spacing: .28em; text-transform: uppercase; color: rgba(255,255,255,.85); margin-top: 14px; }
+  .case-cta {
+    position: absolute; z-index: 3; top: 50%; left: 50%; translate: -50% -50%;
+    width: 148px; height: 148px; border-radius: 50%;
+    background: var(--accent); color: #fff; display: grid; place-content: center; gap: 8px; text-align: center;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
+    opacity: 0; scale: .7; transition: opacity .3s ease, scale .35s cubic-bezier(.2,1,.3,1);
+  }
+  .work-hero:hover .case-cta { opacity: 1; scale: 1; }
+  .case-cta svg { margin-inline: auto; }
+  .work-hero .stack { position: absolute; z-index: 2; bottom: 34px; inset-inline-start: 34px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.9); line-height: 1.9; text-align: start; }
+  .work-hero .yr { position: absolute; z-index: 2; bottom: 34px; inset-inline-end: 34px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; color: rgba(255,255,255,.9); }
+
+  .more-projects {
+    display: flex; align-items: center; gap: 22px; padding: 44px 34px;
+    border-top: 1px solid var(--line-d); border-bottom: 1px solid var(--line-d);
+  }
+  .more-projects .range { font-size: 20px; font-weight: 600; letter-spacing: -.01em; white-space: nowrap; }
+  .more-projects .rule { flex: 1; height: 1px; background: var(--line-d); }
+  .more-link { display: inline-flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 600; }
+  .more-link .disc {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--accent); display: grid; place-items: center;
+    transition: translate .2s ease, background .2s ease;
+  }
+  .more-link:hover .disc { translate: 4px 0; background: var(--accent-2); }
+  .more-link sup { font-family: var(--mono); font-size: 10px; color: #8f8f96; }
+
+  /* ── Services ────────────────────────────────── */
+  .services { background: var(--light); color: var(--ink); padding: 90px 0 40px; }
+  .services-display {
+    font-size: clamp(90px, 17vw, 250px); font-weight: 800; letter-spacing: -.05em; line-height: .8;
+    text-align: center; white-space: nowrap; overflow: hidden;
+    mask-image: linear-gradient(to bottom, #000 42%, transparent 78%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 42%, transparent 78%);
+    filter: blur(0px);
+    user-select: none;
+  }
+  .service-block { width: min(1280px, 100% - 48px); margin-inline: auto; padding: 56px 0 72px; border-top: 1px solid var(--line-l); }
+  .service-block:first-of-type { border-top: 0; }
+  .service-eyebrow { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .service-eyebrow .tag { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-2); border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+  .service-eyebrow .num { font-size: 26px; color: #c4c2bd; font-weight: 600; }
+  .service-block h3 { font-size: clamp(40px, 6vw, 76px); font-weight: 600; letter-spacing: -.03em; margin: 18px 0 34px; }
+  .service-grid { display: grid; grid-template-columns: 240px 1fr 1fr; gap: 48px; align-items: start; }
+  .service-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; }
+  .service-desc { color: var(--ink-2); font-size: 16.5px; max-width: 420px; }
+  .service-desc b { color: var(--ink); }
+  .service-desc .from { margin-top: 18px; font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
+  .plus-list { list-style: none; display: flex; flex-direction: column; }
+  .plus-list li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line-l); font-size: 15.5px; color: #333; }
+  .plus-list li::before { content: '+'; color: var(--accent); font-weight: 700; }
+
+  /* ── Bento ───────────────────────────────────── */
+  .bento { background: var(--light); color: var(--ink); padding: 40px 0 110px; }
+  .bento-grid { width: min(1280px, 100% - 48px); margin-inline: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .cell { background: var(--light-2); border: 1px solid rgba(0,0,0,.07); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; min-height: 380px; }
+  .cell h4 { font-size: 24px; font-weight: 600; letter-spacing: -.02em; line-height: 1.2; }
+  .cell .top-note { font-size: 13.5px; color: var(--ink-2); margin-bottom: 8px; }
+  .cell .big-pct { font-size: 34px; font-weight: 700; color: var(--accent); }
+  .stat-chips { margin: 26px 0 18px; display: flex; flex-direction: column; gap: 10px; }
+  .stat-chip { display: flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+  .stat-chip b { background: var(--ink); color: #fff; border-radius: 6px; padding: 3px 7px; font-weight: 700; }
+  .stat-chip span { background: #efeeec; border-radius: 6px; padding: 3px 9px; color: #333; }
+  .stars { color: var(--accent); letter-spacing: 2px; font-size: 14px; }
+  .cell .foot { margin-top: auto; font-size: 13.5px; color: var(--ink-2); }
+  .cell .foot b { color: var(--accent); font-weight: 600; }
+  .dot-mark {
+    margin: auto; width: 120px; height: 120px; border-radius: 50%;
+    background: radial-gradient(circle, transparent 38%, rgba(0,0,0,.06) 39%),
+                repeating-radial-gradient(circle, rgba(0,0,0,.28) 0 1px, transparent 1.5px 7px);
+    display: grid; place-items: center;
+  }
+  .dot-mark span { font-weight: 800; font-size: 22px; color: var(--accent); background: var(--light-2); padding: 4px 10px; border-radius: 8px; }
+  .price-stack { margin: auto 0; }
+  .price-stack .amount { font-size: 44px; font-weight: 800; letter-spacing: -.03em; }
+  .price-stack .amount small { font-size: 15px; font-weight: 500; color: var(--ink-2); }
+  .check-list { list-style: none; margin-top: auto; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; color: #333; }
+  .check-list li { display: flex; gap: 9px; align-items: center; }
+  .check-list li::before { content: '✓'; color: var(--accent); font-weight: 700; }
+  .avail-card { background: #f6f5f3; border-radius: 12px; padding: 18px; margin-top: auto; }
+  .avail-card .label { display: flex; gap: 8px; align-items: center; font-weight: 600; font-size: 14.5px; }
+  .avail-card .when { color: var(--ink-2); font-size: 14px; margin: 4px 0 14px; }
+  .mini-cta { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; }
+  .mini-cta .disc { width: 38px; height: 38px; border-radius: 10px; background: var(--accent); color: #fff; display: grid; place-items: center; transition: translate .2s ease; }
+  .mini-cta:hover .disc { translate: 3px 0; }
+
+  /* ── Team ────────────────────────────────────── */
+  .team { background: var(--dark); padding: 110px 0; }
+  .team-cards { width: min(1280px, 100% - 48px); margin-inline: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .member { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 3/4.1; transform: rotate(var(--tilt, 0deg)); transition: transform .35s ease; }
+  .member:hover { transform: rotate(0) translateY(-6px); }
+  .member img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.05); }
+  .member .name {
+    position: absolute; bottom: 14px; inset-inline-start: 14px; font-size: 15.5px; font-weight: 600; color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,.5);
+  }
+  .member .role { position: absolute; bottom: 34px; inset-inline-start: 14px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.75); }
+  .team-copy { width: min(1280px, 100% - 48px); margin: 64px auto 0; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 44px; align-items: start; }
+  .team-copy h3 { font-size: clamp(26px, 3vw, 36px); font-weight: 600; letter-spacing: -.02em; line-height: 1.2; }
+  .team-copy h3 em { font-style: normal; color: var(--accent); }
+  .team-copy p { color: #a9a9b0; font-size: 15px; }
+  .team-copy .col3 { border-inline-start: 1px solid var(--line-d); padding-inline-start: 44px; }
+  .team-copy .col3 h4 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+  .team-copy .col3 p { margin-bottom: 20px; font-size: 14px; }
+  .ghost-cta { display: inline-flex; align-items: center; gap: 11px; font-weight: 600; color: #fff; }
+  .ghost-cta .disc { width: 40px; height: 40px; border-radius: 11px; background: var(--accent); display: grid; place-items: center; transition: translate .2s ease; }
+  .ghost-cta:hover .disc { translate: 3px 0; }
+
+  /* ── Journal ("whispers") ────────────────────── */
+  .journal { background: var(--light); color: var(--ink); padding: 100px 0; }
+  .journal-head { width: min(1280px, 100% - 48px); margin-inline: auto; display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 44px; gap: 20px; }
+  .journal-head h2 { font-size: clamp(38px, 5.5vw, 68px); font-weight: 700; letter-spacing: -.03em; }
+  .journal-grid { width: min(1280px, 100% - 48px); margin-inline: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .post { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/4.6; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; color: #fff; }
+  .post .bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .5s ease; }
+  .post:hover .bg { transform: scale(1.05); }
+  .post::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(8,8,10,.55), rgba(8,8,10,.15) 40%, rgba(8,8,10,.72)); }
+  .post > * { position: relative; z-index: 2; }
+  .post .byline { display: flex; justify-content: space-between; font-size: 12.5px; color: rgba(255,255,255,.85); }
+  .post .byline .who b { display: block; font-size: 13.5px; }
+  .post h3 { font-size: 24px; font-weight: 600; letter-spacing: -.015em; line-height: 1.2; margin-top: 10px; }
+  .post p { font-size: 14px; color: rgba(255,255,255,.88); }
+
+  /* ── Footer ──────────────────────────────────── */
+  footer { background: var(--light); color: var(--ink); border-top: 1px solid var(--line-l); }
+  .foot-top { width: min(1280px, 100% - 48px); margin-inline: auto; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 60px; padding: 80px 0 60px; }
+  .foot-top h3 { font-size: clamp(30px, 4vw, 46px); font-weight: 700; letter-spacing: -.03em; line-height: 1.05; }
+  .foot-top .sub { color: var(--ink-2); font-size: 15px; margin: 14px 0 26px; }
+  .news-form { display: flex; flex-direction: column; gap: 14px; max-width: 360px; }
+  .news-form input {
+    background: transparent; border: 0; border-bottom: 1px solid var(--line-l);
+    padding: 10px 2px; font: inherit; font-size: 15px; outline: none; color: var(--ink);
+  }
+  .news-form input:focus { border-color: var(--accent); }
+  .news-btn {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    background: var(--accent); color: #fff; padding: 14px 20px; border-radius: 10px;
+    display: inline-flex; justify-content: center; gap: 10px; transition: background .2s ease;
+  }
+  .news-btn:hover { background: var(--accent-2); }
+  .news-note { font-size: 12px; color: var(--ink-2); }
+  .news-note a { color: var(--accent); }
+  .foot-col .mono-label { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); border-bottom: 1px solid var(--line-l); padding-bottom: 10px; margin-bottom: 16px; }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .foot-col ul a { font-family: var(--mono); font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: #333; }
+  .foot-col ul a:hover { color: var(--accent); }
+  .socials { display: flex; gap: 18px; margin-top: 34px; }
+  .socials a { color: var(--accent); font-weight: 600; font-size: 15px; }
+  .foot-mid { border-top: 1px solid var(--line-l); }
+  .foot-mid-inner { width: min(1280px, 100% - 48px); margin-inline: auto; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 60px; padding: 60px 0 70px; }
+  .foot-tagline { color: var(--ink-2); font-size: 16px; margin-bottom: 18px; }
+  .giant-word { font-size: clamp(48px, 7vw, 92px); font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+  .giant-word .a { color: var(--accent); }
+  .giant-word .b { color: #7d7d84; }
+  .foot-small { display: flex; align-items: center; gap: 12px; margin-top: 22px; font-size: 13px; color: var(--ink-2); }
+  .foot-small .chip { width: 34px; height: 34px; border-radius: 50%; overflow: hidden; }
+  .foot-small .chip img { width: 100%; height: 100%; object-fit: cover; }
+  .kv-block p { font-size: 15px; color: #333; line-height: 1.7; }
+  .kv-block .accent { color: var(--accent); font-weight: 600; font-size: 17px; }
+  .big-phone { font-size: clamp(30px, 3.6vw, 44px); font-weight: 700; letter-spacing: -.02em; margin-top: 8px; }
+  .to-top { display: inline-grid; place-items: center; margin-top: 30px; color: var(--accent); transition: translate .2s ease; }
+  .to-top:hover { translate: 0 -4px; }
+  .copyright { width: min(1280px, 100% - 48px); margin-inline: auto; border-top: 1px solid var(--line-l); padding: 20px 0 30px; display: flex; justify-content: space-between; gap: 12px; font-size: 12.5px; color: var(--ink-2); flex-wrap: wrap; }
+
+  /* ── Reveal + toast ──────────────────────────── */
+  .reveal { opacity: 0; translate: 0 22px; transition: opacity .7s ease, translate .7s ease; }
+  .reveal.in { opacity: 1; translate: 0 0; }
+  .toast {
+    position: fixed; bottom: 22px; right: 22px; z-index: 200;
+    background: var(--ink); color: #fff; border-radius: 12px; padding: 14px 18px; font-size: 13.5px;
+    max-width: 330px; box-shadow: 0 18px 50px rgba(0,0,0,.35);
+    opacity: 0; translate: 0 12px; transition: opacity .3s ease, translate .3s ease; pointer-events: none;
+  }
+  .toast.show { opacity: 1; translate: 0 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; translate: none; transition: none; }
+    *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+  }
+
+  /* ── Responsive ──────────────────────────────── */
+  @media (max-width: 1000px) {
+    .service-grid { grid-template-columns: 1fr; gap: 26px; }
+    .service-grid img { max-width: 340px; }
+    .bento-grid { grid-template-columns: 1fr 1fr; }
+    .team-cards { grid-template-columns: 1fr 1fr; }
+    .team-copy { grid-template-columns: 1fr; gap: 28px; }
+    .team-copy .col3 { border: 0; padding: 0; }
+    .journal-grid { grid-template-columns: 1fr; }
+    .foot-top, .foot-mid-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .team-cards { grid-template-columns: 1fr; }
+    .work-hero .stack { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ Nav ══════════════════════════════════════ -->
+<header class="nav">
+  <a class="logo" href="#top">MO<em>\</em>Studio</a>
+  <nav class="nav-links">
+    <a href="#work">Work<sup>8</sup></a>
+    <a href="#studio">Studio</a>
+    <a href="#journal">Journal<sup>4</sup></a>
+  </nav>
+  <a class="contact-link" href="#contact">Contact</a>
+</header>
+
+<!-- ══ Hero ═════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-img"></div>
+  <div class="hero-inner">
+    <p class="hero-kicker mono"><span class="idx">// 00.01°</span> Brand · Editorial · Motion</p>
+    <h1><span class="a">MO</span><span class="b">\Studio</span></h1>
+    <p class="hero-scramble" id="scramble"></p>
+    <div class="hero-meta">
+      <a class="cta-btn" href="#contact">
+        Start a project
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <p class="hero-clock">Our time <span id="clock">—:—:—</span><br />UTC+3 · Riyadh, KSA</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Statement ════════════════════════════════ -->
+<section class="statement" id="statement">
+  <div class="statement-sticky">
+    <p class="statement-line" data-step="0">we discover<em>.</em></p>
+    <p class="statement-line" data-step="1">we define<em>.</em></p>
+    <p class="statement-line" data-step="2">we design<em>.</em></p>
+    <p class="statement-line" data-step="3">we deliver<em>.</em></p>
+  </div>
+</section>
+
+<!-- ══ Work ═════════════════════════════════════ -->
+<section id="work">
+
+  <a class="work-hero" href="/work/noir-collective">
+    <span class="bg" style="background-image:url('https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=75')"></span>
+    <span class="veil"></span>
+    <span class="center">
+      <span class="brand-tag">noir atelier ✳</span>
+      <h3>Noir Collective</h3>
+      <span class="cat">Brand Identity · Riyadh</span>
+    </span>
+    <span class="case-cta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      View case study
+    </span>
+    <span class="stack">Brand strategy<br />Custom wordmark<br />Arabic + Latin type<br />Print collateral</span>
+    <span class="yr">YR/ 2024</span>
+  </a>
+
+  <a class="work-hero" href="/work/vera-beaute">
+    <span class="bg" style="background-image:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=2000&q=75')"></span>
+    <span class="veil"></span>
+    <span class="center">
+      <span class="brand-tag">véra beauté ✳</span>
+      <h3>Véra Beauté</h3>
+      <span class="cat">Luxury Cosmetics · Packaging</span>
+    </span>
+    <span class="case-cta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      View case study
+    </span>
+    <span class="stack">Logo &amp; packaging<br />Art direction<br />Unboxing system<br />Retail collateral</span>
+    <span class="yr">YR/ 2025</span>
+  </a>
+
+  <a class="work-hero" href="/work/solstice-festival">
+    <span class="bg" style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=75')"></span>
+    <span class="veil"></span>
+    <span class="center">
+      <span class="brand-tag">solstice arts ✳</span>
+      <h3>Solstice Festival</h3>
+      <span class="cat">Poster Series · Risograph</span>
+    </span>
+    <span class="case-cta">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      View case study
+    </span>
+    <span class="stack">Event identity<br />Silk-screen posters<br />Riso print<br />Wayfinding</span>
+    <span class="yr">YR/ 2024</span>
+  </a>
+
+  <div class="more-projects">
+    <span class="range">2018–2025</span>
+    <span class="rule"></span>
+    <a class="more-link" href="/work">
+      <span class="disc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      More projects <sup>5</sup>
+    </a>
+  </div>
+</section>
+
+<!-- ══ Services ═════════════════════════════════ -->
+<section class="services" id="studio">
+  <p class="services-display" aria-hidden="true">services</p>
+
+  <div class="service-block reveal">
+    <div class="service-eyebrow"><span class="tag">Foundation</span><span class="num">/01</span></div>
+    <h3>Brand Identity</h3>
+    <div class="service-grid">
+      <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=700&q=70" alt="Brand identity work sample" />
+      <div class="service-desc">
+        <p>The foundation of every project — how your brand <b>looks, feels and communicates</b>, built as a long-term system rather than a one-off logo.</p>
+        <p class="from">From $8,500 · 8–14 weeks</p>
+      </div>
+      <ul class="plus-list">
+        <li>Positioning and brand voice</li>
+        <li>Bilingual wordmark — Latin + Arabic</li>
+        <li>Visual identity system</li>
+        <li>Brand guidelines (40–80 pages)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block reveal">
+    <div class="service-eyebrow"><span class="tag">Craft</span><span class="num">/02</span></div>
+    <h3>Print &amp; Editorial</h3>
+    <div class="service-grid">
+      <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=700&q=70" alt="Editorial design sample" />
+      <div class="service-desc">
+        <p>From postage-stamp precision to billboard scale — <b>ink on paper that feels inevitable</b>, supervised from grid system to press check.</p>
+        <p class="from">From $4,500 · 4–16 weeks</p>
+      </div>
+      <ul class="plus-list">
+        <li>Editorial layout &amp; magazines</li>
+        <li>Poster series &amp; packaging</li>
+        <li>Brochures and books</li>
+        <li>Print production supervision</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block reveal">
+    <div class="service-eyebrow"><span class="tag">Screen</span><span class="num">/03</span></div>
+    <h3>Digital &amp; Motion</h3>
+    <div class="service-grid">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=70" alt="Digital design sample" />
+      <div class="service-desc">
+        <p>Pixel-sharp assets and motion for products and campaigns — <b>design that moves</b>, on screen and in time.</p>
+        <p class="from">From $3,500 · 2–10 weeks</p>
+      </div>
+      <ul class="plus-list">
+        <li>Social media systems</li>
+        <li>Web UI &amp; landing pages</li>
+        <li>Motion graphics (5–60s)</li>
+        <li>Animated brand assets</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="service-block reveal">
+    <div class="service-eyebrow"><span class="tag">Direction</span><span class="num">/04</span></div>
+    <h3>Art Direction</h3>
+    <div class="service-grid">
+      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=700&q=70" alt="Art direction sample" />
+      <div class="service-desc">
+        <p>A single voice across many hands — campaigns, shoots and multi-channel launches kept <b>consistent across every collaborator</b>.</p>
+        <p class="from">From $2,000/week · Ongoing</p>
+      </div>
+      <ul class="plus-list">
+        <li>Campaign concepts</li>
+        <li>Photography &amp; video direction</li>
+        <li>Multi-agency coordination</li>
+        <li>Quality control &amp; approvals</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Bento ════════════════════════════════════ -->
+<section class="bento">
+  <div class="bento-grid">
+
+    <div class="cell reveal">
+      <h4>we discover.<br />we define.<br /><span style="color:var(--accent)">we design.</span></h4>
+      <div class="dot-mark"><span>MO</span></div>
+      <p class="foot"><b>Ideas</b> that start with you.</p>
+    </div>
+
+    <div class="cell reveal">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <h4>Client<br />Satisfaction<br />Rate</h4><span class="big-pct">100%</span>
+      </div>
+      <div class="stat-chips">
+        <div class="stat-chip"><b>6+</b><span>Years experience</span></div>
+        <div class="stat-chip"><b>80+</b><span>Projects delivered</span></div>
+        <div class="stat-chip"><b>24h</b><span>Average response time</span></div>
+        <div class="stat-chip"><b>30+</b><span>Happy clients</span></div>
+      </div>
+      <p class="stars">★★★★★ <span style="color:var(--ink);font-family:'DM Sans';font-size:14px">5 / 5 (30+ reviews)</span></p>
+      <p class="foot">Backed by feedback from founders, studios and institutions across the region.</p>
+    </div>
+
+    <div class="cell reveal">
+      <p class="top-note">No reheated or pre-made.</p>
+      <h4>Every identity starts fresh.</h4>
+      <div class="dot-mark" style="background:repeating-radial-gradient(circle, rgba(255,90,42,.5) 0 1px, transparent 1.5px 7px)"><span>MO</span></div>
+      <p class="foot"><b>Custom work</b> from day one.</p>
+    </div>
+
+    <div class="cell reveal">
+      <h4>◔ Simple Pricing</h4>
+      <p class="top-note" style="margin-top:8px">Honest scopes that flex with your project — most engagements combine two or three services.</p>
+      <div class="price-stack"><p class="amount">$3,500<small> starting from</small></p></div>
+      <a class="mini-cta" href="/services">
+        <span class="disc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        Explore services
+      </a>
+    </div>
+
+    <div class="cell reveal">
+      <p class="top-note">Built for the long run</p>
+      <h4>With You Beyond Launch</h4>
+      <ul class="check-list">
+        <li>Usable guidelines, not a file dump</li>
+        <li>Direct line to the designer</li>
+        <li>Future-ready systems</li>
+      </ul>
+    </div>
+
+    <div class="cell reveal">
+      <p class="top-note">Quick intro call, no strings attached.</p>
+      <h4>Let's chat or just say hello.</h4>
+      <div class="avail-card">
+        <p class="label">◷ Next availability</p>
+        <p class="when">Booking for Q3–Q4 2026</p>
+        <a class="mini-cta" href="#contact">
+          <span class="disc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          Book now
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ Team ═════════════════════════════════════ -->
+<section class="team">
+  <div class="team-cards">
+    <div class="member reveal" style="--tilt:-2deg">
+      <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=700&q=70" alt="Mohamad Othman" loading="lazy" />
+      <span class="role">Creative Director</span><span class="name">Mohamad Othman</span>
+    </div>
+    <div class="member reveal" style="--tilt:1.5deg">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=70" alt="Sara Haddad" loading="lazy" />
+      <span class="role">Studio Producer</span><span class="name">Sara Haddad</span>
+    </div>
+    <div class="member reveal" style="--tilt:-1.2deg">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=70" alt="Omar Khalil" loading="lazy" />
+      <span class="role">Motion Partner</span><span class="name">Omar Khalil</span>
+    </div>
+    <div class="member reveal" style="--tilt:2deg">
+      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=700&q=70" alt="Dana Aziz" loading="lazy" />
+      <span class="role">Print Partner</span><span class="name">Dana Aziz</span>
+    </div>
+  </div>
+
+  <div class="team-copy">
+    <h3 class="reveal">The studio lead is involved from <em>first kickoff to final delivery.</em></h3>
+    <p class="reveal">Every milestone checked, every detail reviewed, every client kept in the loop. That's how identities land sharp and on time.</p>
+    <div class="col3 reveal">
+      <h4>Meet MO\Studio</h4>
+      <p>A small studio in Riyadh with trusted partners for motion, production and print — the energy that keeps the work sharp.</p>
+      <a class="ghost-cta" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+        <span class="disc"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        Follow on LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Journal ══════════════════════════════════ -->
+<section class="journal" id="journal">
+  <div class="journal-head">
+    <h2 class="reveal">Journal</h2>
+    <a class="more-link reveal" href="/journal" style="color:var(--ink)">
+      <span class="disc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      More entries <sup>4</sup>
+    </a>
+  </div>
+  <div class="journal-grid">
+
+    <a class="post reveal" href="/journal/the-quiet-brief">
+      <span class="bg" style="background-image:url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=70')"></span>
+      <span class="byline"><span class="who"><b>Mohamad Othman</b>Designer</span><span>Sep 12, 2024</span></span>
+      <span>
+        <h3>The Quiet Brief</h3>
+        <p>Every founder says they want "something different" — and none of them mean the same thing. How I unpack the phrase before pixels move.</p>
+      </span>
+    </a>
+
+    <a class="post reveal" href="/journal/type-as-territory">
+      <span class="bg" style="background-image:url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=900&q=70')"></span>
+      <span class="byline"><span class="who"><b>Mohamad Othman</b>Designer</span><span>Jul 4, 2024</span></span>
+      <span>
+        <h3>Type as Territory</h3>
+        <p>A brand's typographic territory is the part of the type landscape it owns. Most identities occupy too much. A case for less.</p>
+      </span>
+    </a>
+
+    <a class="post reveal" href="/journal/designing-for-print-in-2025">
+      <span class="bg" style="background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=70')"></span>
+      <span class="byline"><span class="who"><b>Mohamad Othman</b>Designer</span><span>May 21, 2024</span></span>
+      <span>
+        <h3>Designing for Print in 2025</h3>
+        <p>Print isn't dead — it's specific. What I tell clients who ask if paper is still worth it.</p>
+      </span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ══ Footer ═══════════════════════════════════ -->
+<footer id="contact">
+  <div class="foot-top">
+    <div class="reveal">
+      <h3>Keep you in the loop.</h3>
+      <p class="sub">One note a month — new work, one honest essay, and something bookmarked. <span style="color:var(--accent)">*</span></p>
+      <form class="news-form" id="newsForm">
+        <input type="email" id="newsEmail" placeholder="Enter your email" aria-label="Email address" required />
+        <button class="news-btn" type="submit">Join the newsletter →</button>
+        <p class="news-note">By submitting, you agree to the <a href="/contact">terms</a>. <span style="color:var(--accent)">*</span> No spam, just honest updates.</p>
+      </form>
+    </div>
+    <div class="foot-col reveal">
+      <p class="mono-label">Navigate</p>
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="socials"><a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer">Be</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Li</a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">IG</a><a href="https://x.com/" target="_blank" rel="noopener noreferrer">X</a></div>
+    </div>
+    <div class="foot-col reveal">
+      <p class="mono-label">Links</p>
+      <ul>
+        <li><a href="/">Full portfolio</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot-mid">
+    <div class="foot-mid-inner">
+      <div class="reveal">
+        <p class="foot-tagline">Design that speaks.<br />Systems that last.</p>
+        <p class="giant-word"><span class="a">MO</span><span class="b">\Studio</span></p>
+        <div class="foot-small">
+          <span class="chip"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&q=60" alt="" /></span>
+          <span>An independent studio for brand identity,<br />editorial design and motion.</span>
+        </div>
+      </div>
+      <div class="kv-block reveal">
+        <p class="mono-label" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);border-bottom:1px solid var(--line-l);padding-bottom:10px;margin-bottom:16px">Offline</p>
+        <p>Mo Designs Studio<br />Riyadh, KSA<br />GMT+3 · Sun — Thu</p>
+      </div>
+      <div class="kv-block reveal">
+        <p class="mono-label" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);border-bottom:1px solid var(--line-l);padding-bottom:10px;margin-bottom:16px">Online</p>
+        <p class="accent"><a href="mailto:hello@mo-designs.studio">hello@mo-designs.studio</a></p>
+        <p class="mono-label" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);border-bottom:1px solid var(--line-l);padding-bottom:10px;margin:26px 0 6px">Phone</p>
+        <p class="big-phone">+966 55 000 0165</p>
+        <a class="to-top" href="#top" aria-label="Back to top">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <span>© 2026 Mo Designs Studio — All work, all rights.</span>
+    <span>Designed &amp; built in Riyadh.</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+  // ── Riyadh clock (UTC+3) ──
+  function tick() {
+    const now = new Date();
+    const riyadh = new Date(now.getTime() + (3 * 60 + now.getTimezoneOffset()) * 60000);
+    const p = (n) => String(n).padStart(2, '0');
+    document.getElementById('clock').textContent =
+      p(riyadh.getHours()) + ':' + p(riyadh.getMinutes()) + ':' + p(riyadh.getSeconds());
+  }
+  tick(); setInterval(tick, 1000);
+
+  // ── Hero text scramble ──
+  const LINES = 'DESIGN THAT SPEAKS.\nSYSTEMS THAT LAST.\nWE KEEP BRANDS REMEMBERED.';
+  const GLYPHS = '!<>-_\\/[]{}—=+*^?#________';
+  const scrambleEl = document.getElementById('scramble');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduced) {
+    scrambleEl.textContent = LINES;
+  } else {
+    let frame = 0;
+    const total = 46;
+    const timer = setInterval(() => {
+      frame++;
+      const progress = frame / total;
+      scrambleEl.textContent = LINES.split('').map((ch, i) => {
+        if (ch === '\n' || ch === ' ') return ch;
+        return i / LINES.length < progress ? ch : GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+      }).join('');
+      if (frame >= total) { scrambleEl.textContent = LINES; clearInterval(timer); }
+    }, 42);
+  }
+
+  // ── Statement lines activate with scroll ──
+  const statement = document.getElementById('statement');
+  const lines = [...document.querySelectorAll('.statement-line')];
+  function statementScroll() {
+    const rect = statement.getBoundingClientRect();
+    const total = rect.height - window.innerHeight;
+    const passed = Math.min(Math.max(-rect.top, 0), total) / (total || 1);
+    const active = Math.floor(passed * lines.length + 0.25);
+    lines.forEach((l, i) => l.classList.toggle('active', i <= active));
+  }
+  window.addEventListener('scroll', statementScroll, { passive: true });
+  statementScroll();
+
+  // ── Scroll reveals ──
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { rootMargin: '-60px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // ── Newsletter ──
+  document.getElementById('newsForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsEmail').value.trim();
+    if (!email) return;
+    document.getElementById('newsEmail').value = '';
+    showToast("You're on the list — one honest note a month, unsubscribe in one click.");
+  });
+
+  // ── Toast ──
+  let toastTimer;
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 3400);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* LOMO — orange & black system.
+     BLACK THEME (default/primary): black canvas, orange accent. */
+  :root,
+  [data-theme="dark"] {
+    color-scheme: dark;
+    --color-void:       #0A0A0B;
+    --color-surface:    #121213;
+    --color-panel:      #18181A;
+    --color-border:     #2A2A2C;
+    --color-line:       rgba(255, 255, 255, 0.10);
+    --color-muted:      #6E6E72;
+    --color-soft:       #A3A3A8;
+    --color-bright:     #F6F6F4;
+    --color-accent:     #FA4E0E;
+    --color-accent-dim: #C93E0B;
+    --grid-line:        #1C1C1E;
+  }
+
+  /* ORANGE THEME (alternate): orange canvas, black ink. */
+  [data-theme="light"] {
+    color-scheme: light;
+    --color-void:       #FA4E0E;
+    --color-surface:    #FF5C1F;
+    --color-panel:      #E84808;
+    --color-border:     rgba(10, 10, 11, 0.30);
+    --color-line:       rgba(10, 10, 11, 0.22);
+    --color-muted:      rgba(10, 10, 11, 0.55);
+    --color-soft:       rgba(10, 10, 11, 0.75);
+    --color-bright:     #0A0A0B;
+    --color-accent:     #0A0A0B;
+    --color-accent-dim: #26150D;
+    --grid-line:        #E84808;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Lenis drives smooth scrolling; native smooth would fight it. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    background-color: var(--color-void);
+    color: var(--color-bright);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  /* Arabic — apply when html[dir="rtl"] */
+  html[dir="rtl"] body {
+    font-family: 'IBM Plex Sans Arabic', 'DM Sans', sans-serif;
+  }
+  html[dir="rtl"] .font-display,
+  html[dir="rtl"] .font-heading,
+  html[dir="rtl"] .font-serif {
+    font-family: 'IBM Plex Sans Arabic', 'Bebas Neue', sans-serif;
+    letter-spacing: 0 !important;
+  }
+  /* Arabic glyphs need more vertical room than the Latin display fonts —
+     override Tailwind's leading-none / leading-tight on Arabic headings. */
+  html[dir="rtl"] .font-display {
+    line-height: 1.15 !important;
+  }
+  html[dir="rtl"] .font-heading {
+    line-height: 1.35 !important;
+  }
+
+  ::selection {
+    background-color: var(--color-bright);
+    color: var(--color-void);
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-void);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+
+  /* Accessible focus ring — only for keyboard navigation */
+  :focus-visible {
+    outline: 1.5px solid var(--color-bright);
+    outline-offset: 3px;
+  }
+
+  /* Respect users who prefer reduced motion: kill marquees, pulses,
+     and long CSS animations. Framer Motion is handled by MotionConfig. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.15s !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-bright) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  .clip-corner {
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+  }
+
+  /* Skip-to-content link — visually hidden until focused */
+  .skip-link {
+    position: fixed;
+    top: -100%;
+    left: 1rem;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    background: var(--color-bright);
+    color: var(--color-void);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus-visible {
+    top: 1rem;
+  }
+}
