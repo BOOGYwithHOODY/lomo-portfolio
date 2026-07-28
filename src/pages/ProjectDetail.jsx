@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import Seo from '../components/Seo';
+import BrandIdentity from '../components/BrandIdentity';
 import Magnetic from '../components/motion/Magnetic';
 import { ClipReveal, FadeIn, MaskImage, ParallaxImage, Counter } from '../components/motion/Reveal';
 import { PROJECTS, pick } from '../data/projects';
@@ -187,6 +188,9 @@ export default function ProjectDetail() {
           ))}
         </div>
       </section>
+
+      {/* ── BRAND IDENTITY — logo, palette, type guidelines ──── */}
+      <BrandIdentity project={project} />
 
       {/* ── GALLERY — editorial rhythm ───────────────────────── */}
       <section className="pb-16 lg:pb-24">
