@@ -21,12 +21,12 @@ import Magnetic from './motion/Magnetic';
 // ─────────────────────────────────────────────────────────────────────────────
 
 const CONFIG = {
-  runwayVh: 260,                   // total scroll runway (vh)
-  zoomEnd: 0.65,                   // progress where the mark reaches max scale
-  textExitEnd: 0.42,               // progress where the headline finishes exiting
+  runwayVh: 190,                   // total scroll runway (vh) — shorter = faster zoom
+  zoomEnd: 0.52,                   // progress where the mark reaches max scale
+  textExitEnd: 0.36,               // progress where the headline finishes exiting
   textExitVh: -75,                 // headline travel while exiting (vh)
-  scrollSpring: { stiffness: 100, damping: 30, restDelta: 0.001 },
-  asideFade: [0.1, 0.32],          // progress range over which the aside fades
+  scrollSpring: { stiffness: 80, damping: 24, mass: 0.5, restDelta: 0.001 },
+  asideFade: [0.08, 0.26],         // progress range over which the aside fades
 };
 
 // Hero media aspect ratio (1600 × 872 source).
