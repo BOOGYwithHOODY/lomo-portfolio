@@ -30,11 +30,11 @@ function Row({ project, index, lang, t, onHoverStart, onHoverEnd }) {
         <motion.div
           animate={{ scaleX: hovered ? 1 : 0 }}
           transition={{ duration: 0.5, ease: PALMER_EASE }}
-          className="absolute inset-0 bg-accent origin-left rtl:origin-right pointer-events-none"
+          className="absolute inset-0 bg-bright origin-left rtl:origin-right pointer-events-none"
         />
 
-        <span className={`relative font-mono text-[11px] tracking-[0.18em] shrink-0 w-8 transition-colors duration-300 ${hovered ? 'text-void' : 'text-muted'}`}>
-          {String(index + 1).padStart(2, '0')}
+        <span className={`relative font-mono text-[11px] tracking-[0.18em] shrink-0 w-12 tabular-nums transition-colors duration-300 ${hovered ? 'text-void' : 'text-muted'}`}>
+          {project.year}
         </span>
 
         <div className="relative flex-1 min-w-0 overflow-hidden">
@@ -60,9 +60,6 @@ function Row({ project, index, lang, t, onHoverStart, onHoverEnd }) {
 
         <span className={`relative hidden sm:block font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] shrink-0 transition-colors duration-300 ${hovered ? 'text-void/70' : 'text-muted'}`}>
           {pick(project, 'category', lang)}
-        </span>
-        <span className={`relative hidden md:block font-mono text-[11px] lg:text-[10px] tracking-widest shrink-0 transition-colors duration-300 ${hovered ? 'text-void/70' : 'text-muted'}`}>
-          {project.year}
         </span>
         <ArrowUpRight
           size={18}

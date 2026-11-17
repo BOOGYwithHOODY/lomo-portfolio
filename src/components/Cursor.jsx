@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import LogoMark from './LogoMark';
 import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion';
 
 // Subtle custom cursor: a small dot that trails the pointer and swells
@@ -37,13 +38,12 @@ export default function Cursor() {
     <motion.div
       aria-hidden="true"
       style={{ x: springX, y: springY, translateX: '-50%', translateY: '-50%' }}
-      animate={{
-        width: hovering ? 44 : 10,
-        height: hovering ? 44 : 10,
-        opacity: hovering ? 0.35 : 0.6,
-      }}
+      animate={{ scale: hovering ? 2.6 : 1, opacity: hovering ? 0.9 : 1 }}
       transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 z-[90] pointer-events-none rounded-full bg-bright mix-blend-difference hidden lg:block"
-    />
+      className="fixed top-0 left-0 z-[90] pointer-events-none hidden lg:block"
+    >
+      {/* The LOMO "O" as the pointer accent — the brand's signature shape. */}
+      <LogoMark brand className="w-[14px] h-auto" />
+    </motion.div>
   );
 }

@@ -182,14 +182,9 @@ export default function Hero() {
   }
 
   return (
-    <section ref={ref} className="relative bg-void" style={{ height: `${CONFIG.runwayVh}vh` }}>
+    <section ref={ref} className="relative bg-void" style={{ height: `${typeof window !== 'undefined' && window.innerWidth < 768 ? 140 : CONFIG.runwayVh}vh` }}>
       <div className="sticky top-0 h-screen overflow-hidden">
 
-        {/* Circular ornament behind everything */}
-        <div
-          aria-hidden="true"
-          className="absolute left-1/2 top-1/2 z-0 h-[88vmin] w-[88vmin] -translate-x-1/2 -translate-y-1/2 rounded-full border border-line"
-        />
 
         {/* The mark — sits small between the headline lines at rest, then
             scales up continuously as you scroll (transform only). */}
