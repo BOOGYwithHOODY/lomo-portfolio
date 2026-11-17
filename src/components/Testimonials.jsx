@@ -24,10 +24,10 @@ export default function Testimonials() {
 
         {/* Eyebrow row */}
         <FadeIn className="flex items-center justify-between mb-14 lg:mb-20">
-          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+          <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
             {t('testimonials.eyebrow')}
           </p>
-          <p className="font-mono text-[10px] tracking-[0.18em] text-muted" aria-live="polite">
+          <p className="font-mono text-[11px] lg:text-[10px] tracking-[0.18em] text-muted" aria-live="polite">
             {String(i + 1).padStart(2, '0')} — {String(TESTIMONIALS.length).padStart(2, '0')}
           </p>
         </FadeIn>
@@ -51,7 +51,7 @@ export default function Testimonials() {
                   <p className="font-body text-sm font-medium text-bright">
                     {pick(item, 'author', lang)}
                   </p>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted mt-1">
+                  <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.16em] text-muted mt-1">
                     {pick(item, 'role', lang)} · {pick(item, 'project', lang)}
                   </p>
                 </div>

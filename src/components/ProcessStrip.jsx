@@ -15,7 +15,7 @@ function StepRow({ number, title, blurb, detail, isLast }) {
         <h3 className="font-display text-[clamp(1.8rem,3.5vw,2.6rem)] leading-none text-bright tracking-[-0.01em]">
           {title}
         </h3>
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted mt-2.5">
+        <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted mt-2.5">
           {blurb}
         </p>
         <p className="font-body text-sm lg:text-base text-soft leading-relaxed max-w-lg mt-4">
@@ -45,7 +45,7 @@ export default function ProcessStrip() {
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-28">
             <FadeIn y={12} className="mb-4">
-              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+              <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
                 {t('process.eyebrow')}
               </p>
             </FadeIn>

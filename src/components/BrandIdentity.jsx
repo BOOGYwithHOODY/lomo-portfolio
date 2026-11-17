@@ -41,10 +41,10 @@ function Clearspace({ brand }) {
         <Mark size={84} />
         {/* measurement ticks */}
         {['top-0 left-1/2 -translate-x-1/2 -translate-y-full pb-1', 'bottom-0 left-1/2 -translate-x-1/2 translate-y-full pt-1'].map((pos) => (
-          <span key={pos} className={`absolute ${pos} font-mono text-[9px] text-muted`}>x</span>
+          <span key={pos} className={`absolute ${pos} font-mono text-[11px] lg:text-[11px] lg:text-[10px] text-muted`}>x</span>
         ))}
-        <span className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-full pe-2 font-mono text-[9px] text-muted">x</span>
-        <span className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-full ps-2 font-mono text-[9px] text-muted">x</span>
+        <span className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-full pe-2 font-mono text-[11px] lg:text-[11px] lg:text-[10px] text-muted">x</span>
+        <span className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-full ps-2 font-mono text-[11px] lg:text-[11px] lg:text-[10px] text-muted">x</span>
       </div>
     </div>
   );
@@ -74,12 +74,12 @@ function Swatch({ color, lang, copyLabel, copiedLabel }) {
         className="aspect-square w-full grid place-items-end p-3 border border-line"
         style={{ backgroundColor: color.hex, color: ink }}
       >
-        <span className="font-mono text-[10px] tracking-[0.08em] opacity-0 group-hover:opacity-80 transition-opacity">
+        <span className="font-mono text-[11px] lg:text-[10px] tracking-[0.08em] opacity-0 group-hover:opacity-80 transition-opacity">
           {copied ? copiedLabel : color.hex}
         </span>
       </div>
       <p className="font-heading text-xs font-semibold text-bright mt-2.5">{pick(color, 'name', lang)}</p>
-      <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-muted mt-0.5">{color.hex}</p>
+      <p className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.14em] text-muted mt-0.5">{color.hex}</p>
     </motion.button>
   );
 }
@@ -103,7 +103,7 @@ export default function BrandIdentity({ project }) {
         {/* Header */}
         <div className="mb-12 lg:mb-16">
           <FadeIn y={10} className="mb-3">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
               {t('detail.identity.eyebrow')}
             </p>
           </FadeIn>
@@ -125,7 +125,7 @@ export default function BrandIdentity({ project }) {
               style={{ backgroundColor: dark.hex, color: light.hex }}
             >
               <Lockup brand={identity.brand} />
-              <span className="absolute top-4 start-4 font-mono text-[9px] uppercase tracking-[0.2em] opacity-50">
+              <span className="absolute top-4 start-4 font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.2em] opacity-50">
                 {t('detail.identity.primary')}
               </span>
             </div>
@@ -136,7 +136,7 @@ export default function BrandIdentity({ project }) {
               style={{ backgroundColor: light.hex, color: dark.hex }}
             >
               <Lockup brand={identity.brand} />
-              <span className="absolute top-4 start-4 font-mono text-[9px] uppercase tracking-[0.2em] opacity-50">
+              <span className="absolute top-4 start-4 font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.2em] opacity-50">
                 {t('detail.identity.inverse')}
               </span>
             </div>
@@ -147,7 +147,7 @@ export default function BrandIdentity({ project }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5 mt-4 lg:mt-5">
           <FadeIn>
             <div className="relative border border-line bg-surface h-full">
-              <span className="absolute top-4 start-4 font-mono text-[9px] uppercase tracking-[0.2em] text-muted">
+              <span className="absolute top-4 start-4 font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted">
                 {t('detail.identity.clearspace')}
               </span>
               <div className="text-bright"><Clearspace brand={identity.brand} /></div>
@@ -155,7 +155,7 @@ export default function BrandIdentity({ project }) {
           </FadeIn>
           <FadeIn delay={0.1}>
             <div className="relative border border-line bg-surface h-full min-h-[220px] p-8 pt-12">
-              <span className="absolute top-4 start-4 font-mono text-[9px] uppercase tracking-[0.2em] text-muted">
+              <span className="absolute top-4 start-4 font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted">
                 {t('detail.identity.variations')}
               </span>
               <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 h-full text-bright">
@@ -170,10 +170,10 @@ export default function BrandIdentity({ project }) {
         {/* Colour system */}
         <div className="mt-14 lg:mt-20">
           <FadeIn className="flex items-baseline justify-between mb-6">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
               {t('detail.identity.palette')}
             </p>
-            <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-muted hidden sm:block">
+            <p className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.14em] text-muted hidden sm:block">
               {t('detail.identity.copy')}
             </p>
           </FadeIn>
@@ -193,7 +193,7 @@ export default function BrandIdentity({ project }) {
         {/* Typography */}
         <div className="mt-14 lg:mt-20">
           <FadeIn className="mb-2">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
               {t('detail.identity.type')}
             </p>
           </FadeIn>
@@ -206,7 +206,7 @@ export default function BrandIdentity({ project }) {
                   </span>
                   <div>
                     <p className="font-heading text-sm font-semibold text-bright">{face.family}</p>
-                    <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-muted mt-1">
+                    <p className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.16em] text-muted mt-1">
                       {pick(face, 'role', lang)}
                     </p>
                   </div>

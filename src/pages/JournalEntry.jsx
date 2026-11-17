@@ -79,13 +79,13 @@ export default function JournalEntry() {
       <header className="pt-28 lg:pt-36 pb-12 px-6 lg:px-10">
         <div className="max-w-4xl mx-auto">
           <FadeIn y={8}>
-            <Link to="/journal" className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted hover:text-bright transition-colors mb-10">
+            <Link to="/journal" className="inline-flex items-center gap-2 font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted hover:text-bright transition-colors mb-10">
               <PrevIcon size={12} /> {t('journal.entry.back')}
             </Link>
           </FadeIn>
 
           <FadeIn y={10} delay={0.05}>
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted mb-4">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted mb-4">
               {pick(post, 'category', lang)}
             </p>
           </FadeIn>
@@ -100,7 +100,7 @@ export default function JournalEntry() {
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.3} className="mt-8 flex items-center gap-4 font-mono text-[10px] text-muted uppercase tracking-[0.16em]">
+          <FadeIn delay={0.3} className="mt-8 flex items-center gap-4 font-mono text-[11px] lg:text-[10px] text-muted uppercase tracking-[0.16em]">
             <span>{formatDate(post.date, lang)}</span>
             <span className="w-1 h-1 bg-muted rounded-full" />
             <span className="flex items-center gap-1.5"><Clock size={11} /> {pick(post, 'readingTime', lang)}</span>
@@ -131,7 +131,7 @@ export default function JournalEntry() {
           ))}
 
           <FadeIn className="mt-12 pt-8 border-t border-line">
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-3">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted mb-3">
               {t('journal.entry.by')}
             </p>
             <p className="font-heading font-semibold text-bright">{lang === 'ar' ? 'محمد عثمان' : 'Mohamad Othman'}</p>
@@ -144,7 +144,7 @@ export default function JournalEntry() {
       <section className="border-t border-line">
         <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x rtl:md:divide-x-reverse divide-[color:var(--color-line)]">
           <Link to={`/journal/${prev.slug}`} className="group p-10 hover:bg-panel transition-colors">
-            <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-3">
+            <p className="flex items-center gap-2 font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted mb-3">
               <PrevIcon size={12} /> {t('journal.entry.prev')}
             </p>
             <p className="font-display text-2xl md:text-3xl text-bright tracking-[-0.01em] group-hover:text-soft transition-colors">
@@ -152,7 +152,7 @@ export default function JournalEntry() {
             </p>
           </Link>
           <Link to={`/journal/${next.slug}`} className="group p-10 hover:bg-panel transition-colors text-end">
-            <p className="flex items-center justify-end gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-3">
+            <p className="flex items-center justify-end gap-2 font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted mb-3">
               {t('journal.entry.next')} <NextIcon size={12} />
             </p>
             <p className="font-display text-2xl md:text-3xl text-bright tracking-[-0.01em] group-hover:text-soft transition-colors">

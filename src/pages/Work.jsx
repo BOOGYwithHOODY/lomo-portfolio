@@ -58,10 +58,10 @@ function Row({ project, index, lang, t, onHoverStart, onHoverEnd }) {
           </div>
         </div>
 
-        <span className={`relative hidden sm:block font-mono text-[10px] uppercase tracking-[0.18em] shrink-0 transition-colors duration-300 ${hovered ? 'text-void/70' : 'text-muted'}`}>
+        <span className={`relative hidden sm:block font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] shrink-0 transition-colors duration-300 ${hovered ? 'text-void/70' : 'text-muted'}`}>
           {pick(project, 'category', lang)}
         </span>
-        <span className={`relative hidden md:block font-mono text-[10px] tracking-widest shrink-0 transition-colors duration-300 ${hovered ? 'text-void/70' : 'text-muted'}`}>
+        <span className={`relative hidden md:block font-mono text-[11px] lg:text-[10px] tracking-widest shrink-0 transition-colors duration-300 ${hovered ? 'text-void/70' : 'text-muted'}`}>
           {project.year}
         </span>
         <ArrowUpRight
@@ -100,11 +100,11 @@ function Card({ project, index, lang }) {
             <h2 className="font-display text-xl lg:text-2xl tracking-[-0.01em] text-bright group-hover:text-soft transition-colors">
               {pick(project, 'title', lang)}
             </h2>
-            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted mt-1">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.16em] text-muted mt-1">
               {pick(project, 'category', lang)}
             </p>
           </div>
-          <span className="font-mono text-[10px] tracking-[0.16em] text-muted shrink-0">{project.year}</span>
+          <span className="font-mono text-[11px] lg:text-[10px] tracking-[0.16em] text-muted shrink-0">{project.year}</span>
         </div>
       </Link>
     </motion.li>
@@ -164,7 +164,7 @@ export default function Work() {
       <header className="pt-28 lg:pt-36 pb-12 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <FadeIn y={10} className="mb-4">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
               {t('work.page.eyebrow')}
             </p>
           </FadeIn>
@@ -185,7 +185,7 @@ export default function Work() {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2" role="tablist" aria-label={t('work.filter.all')}>
             <button
               onClick={() => setActiveCat(null)}
-              className={`font-mono text-[10px] uppercase tracking-[0.18em] pb-1 border-b transition-colors ${
+              className={`font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] pb-1 border-b transition-colors ${
                 activeCat === null ? 'text-bright border-bright' : 'text-muted border-transparent hover:text-bright'
               }`}
             >
@@ -195,7 +195,7 @@ export default function Work() {
               <button
                 key={cat.en}
                 onClick={() => setActiveCat(cat.en)}
-                className={`font-mono text-[10px] uppercase tracking-[0.18em] pb-1 border-b transition-colors ${
+                className={`font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] pb-1 border-b transition-colors ${
                   activeCat === cat.en ? 'text-bright border-bright' : 'text-muted border-transparent hover:text-bright'
                 }`}
               >
@@ -205,7 +205,7 @@ export default function Work() {
           </div>
 
           <div className="flex items-center gap-4">
-            <p className="font-mono text-[10px] text-muted tracking-[0.18em]">
+            <p className="font-mono text-[11px] lg:text-[10px] text-muted tracking-[0.18em]">
               {String(filtered.length).padStart(2, '0')} {filtered.length === 1 ? t('work.count.one') : t('work.count.many')}
             </p>
             <div className="flex items-center border border-line">

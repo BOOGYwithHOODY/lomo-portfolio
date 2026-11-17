@@ -66,7 +66,7 @@ function ServiceRow({ service, lang, t, open, onToggle }) {
           <span className="block font-display text-[clamp(1.8rem,5vw,3.6rem)] leading-none tracking-[-0.01em] text-bright group-hover:text-soft transition-colors">
             {pick(service, 'title', lang)}
           </span>
-          <span className="block font-mono text-[10px] uppercase tracking-[0.18em] text-muted mt-2.5">
+          <span className="block font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] text-muted mt-2.5">
             {pick(service, 'tagline', lang)}
           </span>
         </span>
@@ -100,7 +100,7 @@ function ServiceRow({ service, lang, t, open, onToggle }) {
                 </p>
                 <Link
                   to="/contact"
-                  className="group/btn inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-bright border-b border-bright/30 hover:border-bright pb-1 transition-colors"
+                  className="group/btn inline-flex items-center gap-2 font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] text-bright border-b border-bright/30 hover:border-bright pb-1 transition-colors"
                 >
                   {t('services.enquire')} {pick(service, 'title', lang)}
                   <ArrowUpRight size={12} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
@@ -109,7 +109,7 @@ function ServiceRow({ service, lang, t, open, onToggle }) {
 
               {/* Deliverables */}
               <div className="lg:col-span-3">
-                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-4">
+                <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted mb-4">
                   {t('services.whatYouGet')}
                 </p>
                 <ul className="space-y-2.5">
@@ -125,15 +125,15 @@ function ServiceRow({ service, lang, t, open, onToggle }) {
               {/* Meta */}
               <div className="lg:col-span-3 space-y-6">
                 <div>
-                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted mb-1.5">{t('services.from')}</p>
+                  <p className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted mb-1.5">{t('services.from')}</p>
                   <p className="font-display text-2xl text-bright">{service.startingFrom}</p>
                 </div>
                 <div>
-                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted mb-1.5">{t('contact.form.timeline')}</p>
+                  <p className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted mb-1.5">{t('contact.form.timeline')}</p>
                   <p className="font-body text-sm text-bright">{pick(service, 'timeline', lang)}</p>
                 </div>
                 <div>
-                  <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted mb-1.5">Best for</p>
+                  <p className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted mb-1.5">Best for</p>
                   <p className="font-body text-sm text-soft leading-relaxed">{pick(service, 'bestFor', lang)}</p>
                 </div>
               </div>
@@ -199,7 +199,7 @@ export default function ServicesPage() {
       <header className="pt-28 lg:pt-36 pb-14 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <FadeIn y={10} className="mb-4">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
               {t('services.page.eyebrow')}
             </p>
           </FadeIn>
@@ -236,7 +236,7 @@ export default function ServicesPage() {
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-28">
               <FadeIn y={10} className="mb-3">
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+                <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
                   {t('services.principles.eyebrow')}
                 </p>
               </FadeIn>
@@ -261,7 +261,7 @@ export default function ServicesPage() {
       <section className="px-6 lg:px-10 py-20 lg:py-28 border-t border-line">
         <div className="max-w-5xl mx-auto">
           <FadeIn y={10} className="mb-3">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
               {t('services.faq.eyebrow')}
             </p>
           </FadeIn>
@@ -286,7 +286,7 @@ export default function ServicesPage() {
       <section className="px-6 lg:px-10 py-14 border-t border-line">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted mb-2">{t('services.ready.eyebrow')}</p>
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted mb-2">{t('services.ready.eyebrow')}</p>
             <p className="font-display text-3xl md:text-4xl text-bright tracking-[-0.01em]">{t('services.ready.title')}</p>
           </div>
           <Magnetic>

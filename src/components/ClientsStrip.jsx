@@ -38,7 +38,7 @@ export default function ClientsStrip() {
   return (
     <section className="py-16 lg:py-20 border-t border-line bg-void overflow-hidden">
       <FadeIn className="px-6 lg:px-10 mb-10">
-        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted text-center">
+        <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted text-center">
           {t('clients.title')}
         </p>
       </FadeIn>

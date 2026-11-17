@@ -245,4 +245,9 @@ export default {
 
   // ── متفرقات
   'misc.backToTop':       'العودة للأعلى',
+  'a11y.themeOrange':     'التبديل إلى السمة البرتقالية',
+  'a11y.themeBlack':      'التبديل إلى السمة السوداء',
+  'a11y.language':        'التبديل إلى الإنجليزية',
+  'a11y.menuOpen':        'فتح القائمة',
+  'a11y.menuClose':       'إغلاق القائمة',
 };

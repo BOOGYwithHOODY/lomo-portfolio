@@ -37,7 +37,7 @@ function StudioClock() {
   }).format(now);
 
   return (
-    <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-muted tabular-nums">
+    <span className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.18em] text-muted tabular-nums">
       {t('footer.city')} · {time}
     </span>
   );
@@ -115,7 +115,7 @@ export default function Footer() {
               >
                 L<LogoMark brand className="h-[0.72em] w-auto me-[0.1em]" />MO
               </Link>
-              <p className="font-mono text-[10px] text-muted leading-relaxed max-w-xs">
+              <p className="font-mono text-[11px] lg:text-[10px] text-muted leading-relaxed max-w-xs">
                 {t('footer.tagline')}
               </p>
             </div>
@@ -126,7 +126,7 @@ export default function Footer() {
                 <Link
                   key={to}
                   to={to}
-                  className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted hover:text-bright transition-colors"
+                  className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] text-muted hover:text-bright transition-colors"
                 >
                   {label}
                 </Link>
@@ -145,7 +145,7 @@ export default function Footer() {
                   className="group flex items-center gap-2 text-muted hover:text-bright transition-colors"
                 >
                   <Icon size={14} />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.14em] hidden sm:block">
+                  <span className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.14em] hidden sm:block">
                     {label}
                   </span>
                 </a>
@@ -155,12 +155,12 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="mt-8 pt-6 border-t border-line flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-            <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.18em] text-muted">
               © {year} LOMO Studio. {t('footer.rights')}
             </p>
             <div className="flex items-center gap-5">
               <StudioClock />
-              <p className="font-mono text-[9px] text-muted">
+              <p className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] text-muted">
                 {t('footer.built')}
               </p>
             </div>

@@ -6,15 +6,16 @@ import { PRESS } from '../hooks/animations';
 
 export function ThemeToggle({ compact = false }) {
   const { theme, toggle } = useTheme();
+  const { t } = useT();
   const isDark = theme === 'dark';
 
   return (
     <motion.button
       {...PRESS}
       onClick={toggle}
-      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      aria-label={t(isDark ? 'a11y.themeOrange' : 'a11y.themeBlack')}
       className={`group relative flex items-center justify-center border border-border hover:border-accent transition-colors text-soft hover:text-accent ${
-        compact ? 'w-9 h-9' : 'w-10 h-10'
+        compact ? 'w-11 h-11 lg:w-9 lg:h-9' : 'w-11 h-11'
       }`}
     >
       <AnimatePresence mode="wait" initial={false}>
@@ -34,14 +35,14 @@ export function ThemeToggle({ compact = false }) {
 }
 
 export function LangToggle({ compact = false }) {
-  const { lang, toggle } = useT();
+  const { lang, toggle, t } = useT();
   return (
     <motion.button
       {...PRESS}
       onClick={toggle}
-      aria-label="Toggle language"
+      aria-label={t('a11y.language')}
       className={`group relative flex items-center gap-2 border border-border hover:border-accent transition-colors text-soft hover:text-accent px-3 ${
-        compact ? 'h-9' : 'h-10'
+        compact ? 'h-11 lg:h-9' : 'h-11'
       }`}
     >
       <Languages size={14} />

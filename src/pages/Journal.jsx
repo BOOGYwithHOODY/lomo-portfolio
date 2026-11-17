@@ -26,7 +26,7 @@ export default function Journal() {
       <header className="pt-28 lg:pt-36 pb-14 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <FadeIn y={10} className="mb-4">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
               {t('journal.eyebrow')}
             </p>
           </FadeIn>
@@ -55,7 +55,7 @@ export default function Journal() {
             </Link>
             <div className="lg:col-span-5">
               <FadeIn>
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted mb-4">
+                <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted mb-4">
                   {t('journal.latest')} · {pick(featured, 'category', lang)}
                 </p>
                 <Link to={`/journal/${featured.slug}`}>
@@ -69,14 +69,14 @@ export default function Journal() {
                 <p className="font-body text-sm text-soft leading-relaxed mb-6">
                   {pick(featured, 'excerpt', lang)}
                 </p>
-                <div className="flex items-center gap-4 mb-8 font-mono text-[10px] text-muted uppercase tracking-[0.16em]">
+                <div className="flex items-center gap-4 mb-8 font-mono text-[11px] lg:text-[10px] text-muted uppercase tracking-[0.16em]">
                   <span>{formatDate(featured.date, lang)}</span>
                   <span className="w-1 h-1 bg-muted rounded-full" />
                   <span className="flex items-center gap-1.5"><Clock size={11} /> {pick(featured, 'readingTime', lang)}</span>
                 </div>
                 <Link
                   to={`/journal/${featured.slug}`}
-                  className="group/btn inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-bright border-b border-bright/30 hover:border-bright pb-1 transition-colors"
+                  className="group/btn inline-flex items-center gap-2 font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] text-bright border-b border-bright/30 hover:border-bright pb-1 transition-colors"
                 >
                   {t('journal.read')}
                   <ArrowUpRight size={12} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
@@ -91,7 +91,7 @@ export default function Journal() {
       <section className="px-6 lg:px-10 py-16 border-t border-line">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="mb-8">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">{t('journal.all')}</p>
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">{t('journal.all')}</p>
           </FadeIn>
 
           <ul className="border-t border-line">
@@ -102,7 +102,7 @@ export default function Journal() {
                     to={`/journal/${post.slug}`}
                     className="group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 items-baseline py-7 border-b border-line hover:bg-panel/60 transition-colors px-2"
                   >
-                    <span className="md:col-span-2 font-mono text-[10px] tracking-[0.14em] text-muted">
+                    <span className="md:col-span-2 font-mono text-[11px] lg:text-[10px] tracking-[0.14em] text-muted">
                       {formatDate(post.date, lang)}
                     </span>
                     <div className="md:col-span-6">
@@ -111,10 +111,10 @@ export default function Journal() {
                       </h3>
                       <p className="font-body text-sm text-soft mt-1.5">{pick(post, 'subtitle', lang)}</p>
                     </div>
-                    <span className="md:col-span-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+                    <span className="md:col-span-2 font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.16em] text-muted">
                       {pick(post, 'category', lang)}
                     </span>
-                    <span className="md:col-span-2 flex items-center md:justify-end gap-1.5 font-mono text-[10px] text-muted uppercase tracking-[0.14em]">
+                    <span className="md:col-span-2 flex items-center md:justify-end gap-1.5 font-mono text-[11px] lg:text-[10px] text-muted uppercase tracking-[0.14em]">
                       <Clock size={11} /> {pick(post, 'readingTime', lang)}
                       <ArrowUpRight size={12} className="ms-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </span>
@@ -130,7 +130,7 @@ export default function Journal() {
       <section className="px-6 lg:px-10 py-20 lg:py-28 border-t border-line">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn y={10} className="mb-3">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
               {t('journal.sub.eyebrow')}
             </p>
           </FadeIn>

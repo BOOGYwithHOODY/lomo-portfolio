@@ -25,7 +25,7 @@ function BehanceIcon({ size = 16 }) {
 }
 
 function Label({ children }) {
-  return <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-3">{children}</p>;
+  return <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted mb-3">{children}</p>;
 }
 
 function Field({ label, error, children }) {
@@ -34,7 +34,7 @@ function Field({ label, error, children }) {
       <Label>{label}</Label>
       {children}
       {error && (
-        <p className="mt-2 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.1em] text-bright">
+        <p className="mt-2 flex items-center gap-2 font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.1em] text-bright">
           <AlertCircle size={12} /> {error}
         </p>
       )}
@@ -48,7 +48,7 @@ function Chip({ selected, onClick, children }) {
       type="button"
       onClick={onClick}
       aria-pressed={selected}
-      className={`font-mono text-[10px] uppercase tracking-[0.14em] px-3 py-2 border transition-colors ${
+      className={`font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.14em] px-3 py-2 border transition-colors ${
         selected
           ? 'bg-bright text-void border-bright'
           : 'bg-transparent text-soft border-bright/15 hover:text-bright hover:border-bright'
@@ -109,7 +109,7 @@ export default function Contact() {
       <header className="pt-28 lg:pt-36 pb-14 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <FadeIn y={10} className="mb-4">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
               {t('contact.eyebrow')}
             </p>
           </FadeIn>

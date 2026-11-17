@@ -13,7 +13,7 @@ import { useT } from '../contexts/LanguageContext';
 function MetaItem({ label, value }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-muted">{label}</span>
+      <span className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">{label}</span>
       <span className="font-body text-sm text-bright font-medium leading-snug">{value}</span>
     </div>
   );
@@ -28,7 +28,7 @@ function Chapter({ index, label, body }) {
           <span className="font-display text-[clamp(2.4rem,5vw,3.6rem)] leading-none text-muted/40 select-none">
             {String(index).padStart(2, '0')}
           </span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted pb-1">
+          <span className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted pb-1">
             {label}
           </span>
         </div>
@@ -64,7 +64,7 @@ function NextProject({ project, lang, t, dir }) {
 
       <div className="relative px-6 lg:px-10 py-20 lg:py-28">
         <div className="max-w-7xl mx-auto">
-          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted group-hover:text-white/70 transition-colors mb-5">
+          <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted group-hover:text-white/70 transition-colors mb-5">
             {t('detail.next')}
           </p>
           <div className="flex items-center justify-between gap-6">
@@ -77,7 +77,7 @@ function NextProject({ project, lang, t, dir }) {
               className="shrink-0 text-muted group-hover:text-white group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all"
             />
           </div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted group-hover:text-white/70 transition-colors mt-4">
+          <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] text-muted group-hover:text-white/70 transition-colors mt-4">
             {pick(project, 'category', lang)} · {project.year}
           </p>
         </div>
@@ -124,14 +124,14 @@ export default function ProjectDetail() {
           <FadeIn y={8}>
             <Link
               to="/work"
-              className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted hover:text-bright transition-colors mb-10"
+              className="inline-flex items-center gap-2 font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted hover:text-bright transition-colors mb-10"
             >
               <BackIcon size={12} /> {t('detail.back')}
             </Link>
           </FadeIn>
 
           <FadeIn y={10} delay={0.05}>
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted mb-4">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted mb-4">
               {pick(project, 'category', lang)} · {project.year}
             </p>
           </FadeIn>
@@ -174,7 +174,7 @@ export default function ProjectDetail() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-14 lg:mb-20">
             <FadeIn y={10} className="mb-3">
-              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+              <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
                 {t('detail.story.eyebrow')}
               </p>
             </FadeIn>
@@ -245,7 +245,7 @@ export default function ProjectDetail() {
           {/* Timeline */}
           <div className="lg:col-span-7">
             <FadeIn y={10} className="mb-3">
-              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+              <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
                 {t('detail.process.eyebrow')}
               </p>
             </FadeIn>
@@ -272,10 +272,10 @@ export default function ProjectDetail() {
           <aside className="lg:col-span-5">
             <div className="lg:sticky lg:top-28 space-y-12">
               <FadeIn>
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted mb-4">{t('detail.services')}</p>
+                <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted mb-4">{t('detail.services')}</p>
                 <ul className="flex flex-wrap gap-2">
                   {pick(project, 'services', lang).map(s => (
-                    <li key={s} className="font-mono text-[10px] uppercase tracking-[0.14em] text-bright border border-bright/15 px-3 py-1.5">
+                    <li key={s} className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.14em] text-bright border border-bright/15 px-3 py-1.5">
                       {s}
                     </li>
                   ))}
@@ -283,7 +283,7 @@ export default function ProjectDetail() {
               </FadeIn>
 
               <FadeIn delay={0.08}>
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted mb-4">{t('detail.deliverables')}</p>
+                <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted mb-4">{t('detail.deliverables')}</p>
                 <ul>
                   {pick(project, 'deliverables', lang).map(d => (
                     <li key={d} className="flex items-start gap-3 font-body text-sm text-soft py-2.5 border-b border-line last:border-b-0">
@@ -302,7 +302,7 @@ export default function ProjectDetail() {
       <section className="px-6 lg:px-10 py-16 lg:py-24 border-t border-line">
         <div className="max-w-7xl mx-auto">
           <FadeIn y={10} className="mb-12">
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
               {t('detail.metrics')}
             </p>
           </FadeIn>
@@ -313,7 +313,7 @@ export default function ProjectDetail() {
                   value={m.value}
                   className="font-display text-[clamp(2.4rem,5vw,4rem)] leading-none text-bright tracking-[-0.01em] block"
                 />
-                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted mt-4 leading-relaxed">
+                <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.16em] text-muted mt-4 leading-relaxed">
                   {pick(m, 'label', lang)}
                 </p>
               </FadeIn>
@@ -337,7 +337,7 @@ export default function ProjectDetail() {
                     <p className="font-body text-sm font-medium text-bright">
                       {pick(project.testimonial, 'author', lang)}
                     </p>
-                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted mt-1">
+                    <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.16em] text-muted mt-1">
                       {pick(project.testimonial, 'role', lang)}
                     </p>
                   </div>

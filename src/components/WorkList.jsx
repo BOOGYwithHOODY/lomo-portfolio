@@ -29,7 +29,7 @@ function FeaturedCard({ project, lang, t, index }) {
           {/* Hover veil + view label */}
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-500" />
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-            <span className="inline-flex items-center gap-2 bg-void text-bright font-mono text-[10px] uppercase tracking-[0.2em] px-5 py-3">
+            <span className="inline-flex items-center gap-2 bg-void text-bright font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.2em] px-5 py-3">
               {t('work.viewProject')}
               <ArrowUpRight size={12} strokeWidth={2} />
             </span>
@@ -42,11 +42,11 @@ function FeaturedCard({ project, lang, t, index }) {
             <h3 className="font-display text-2xl lg:text-3xl tracking-[-0.01em] text-bright group-hover:text-soft transition-colors">
               {pick(project, 'title', lang)}
             </h3>
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted mt-1.5">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] text-muted mt-1.5">
               {pick(project, 'category', lang)}
             </p>
           </div>
-          <span className="font-mono text-[10px] tracking-[0.18em] text-muted shrink-0">
+          <span className="font-mono text-[11px] lg:text-[10px] tracking-[0.18em] text-muted shrink-0">
             {project.year}
           </span>
         </div>
@@ -110,7 +110,7 @@ function ProjectRow({ project, index, lang, onHoverStart, onHoverEnd }) {
         </div>
 
         <span
-          className={`relative hidden sm:block font-mono text-[10px] uppercase tracking-[0.18em] shrink-0 transition-colors duration-300 ${
+          className={`relative hidden sm:block font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] shrink-0 transition-colors duration-300 ${
             hovered ? 'text-void/70' : 'text-muted'
           }`}
         >
@@ -118,7 +118,7 @@ function ProjectRow({ project, index, lang, onHoverStart, onHoverEnd }) {
         </span>
 
         <span
-          className={`relative hidden md:block font-mono text-[10px] tracking-widest shrink-0 transition-colors duration-300 ${
+          className={`relative hidden md:block font-mono text-[11px] lg:text-[10px] tracking-widest shrink-0 transition-colors duration-300 ${
             hovered ? 'text-void/70' : 'text-muted'
           }`}
         >
@@ -200,7 +200,7 @@ export default function WorkList({ limit }) {
           <div className="flex items-end justify-between gap-4 py-10 lg:py-14">
             <div>
               <FadeIn y={12} className="mb-3">
-                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+                <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
                   {t('work.eyebrow')}
                 </p>
               </FadeIn>
@@ -210,7 +210,7 @@ export default function WorkList({ limit }) {
             </div>
 
             <FadeIn delay={0.2} className="hidden md:block">
-              <p className="font-mono text-[10px] text-muted uppercase tracking-[0.18em]">
+              <p className="font-mono text-[11px] lg:text-[10px] text-muted uppercase tracking-[0.18em]">
                 {items.length} {t('work.count.many')}
               </p>
             </FadeIn>

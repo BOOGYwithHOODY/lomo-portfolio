@@ -92,8 +92,10 @@ export default function Navbar() {
               <motion.button
                 {...PRESS}
                 onClick={() => setMenuOpen(v => !v)}
-                aria-label="Toggle menu"
-                className="lg:hidden flex items-center justify-center w-9 h-9 text-bright"
+                aria-label={t(menuOpen ? 'a11y.menuClose' : 'a11y.menuOpen')}
+                aria-expanded={menuOpen}
+                aria-controls="mobile-menu"
+                className="lg:hidden flex items-center justify-center w-11 h-11 text-bright"
               >
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.span
@@ -122,6 +124,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0   }}
             exit={{    opacity: 0, y: -8  }}
             transition={{ duration: 0.35, ease: PALMER_EASE }}
+            id="mobile-menu"
             className="fixed inset-0 z-40 bg-void pt-[72px] flex flex-col px-6 pb-10"
           >
             <div className="flex-1 flex flex-col justify-center gap-1 border-t border-line">

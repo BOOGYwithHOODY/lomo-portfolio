@@ -14,7 +14,7 @@ export default function NotFound() {
       <section className="min-h-[90svh] pt-32 pb-20 px-6 lg:px-10 flex items-center justify-center">
         <div className="max-w-3xl text-center">
           <FadeIn y={10} className="mb-6">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
+            <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-muted">
               {t('nf.eyebrow')}
             </p>
           </FadeIn>

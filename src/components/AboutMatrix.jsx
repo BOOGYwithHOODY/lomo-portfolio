@@ -37,7 +37,7 @@ export default function AboutMatrix() {
 
         {/* ── Section eyebrow ──────────────────────────────── */}
         <FadeIn className="mb-16 lg:mb-20">
-          <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+          <span className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
             {t('about.eyebrow')}
           </span>
         </FadeIn>
@@ -83,7 +83,7 @@ export default function AboutMatrix() {
                     <p className="font-display text-[clamp(2.2rem,5vw,3.5rem)] text-bright leading-none tracking-[-0.02em] group-hover:text-muted transition-colors">
                       <Counter value={value} />
                     </p>
-                    <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted mt-1.5">
+                    <p className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.2em] text-muted mt-1.5">
                       {label}
                     </p>
                   </div>
@@ -126,10 +126,10 @@ export default function AboutMatrix() {
             {/* Experience table — single source of truth in data/projects.js */}
             <FadeIn delay={0.15}>
               <div className="flex items-center justify-between mb-5">
-                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+                <span className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted">
                   {t('aboutPage.experience.eyebrow')}
                 </span>
-                <span className="font-mono text-[10px] text-muted">
+                <span className="font-mono text-[11px] lg:text-[10px] text-muted">
                   {EXPERIENCE.length}
                 </span>
               </div>
@@ -148,14 +148,14 @@ export default function AboutMatrix() {
                     variants={rowReveal}
                     className="group grid grid-cols-[96px_1fr] gap-3 items-center py-4 border-b border-line hover:bg-panel transition-colors px-0 hover:px-3 rounded-sm"
                   >
-                    <span className="font-mono text-[9px] tracking-[0.1em] text-muted whitespace-nowrap">
+                    <span className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] tracking-[0.1em] text-muted whitespace-nowrap">
                       {pick(e, 'period', lang)}
                     </span>
                     <div>
                       <p className="font-heading text-sm font-semibold text-bright leading-tight">
                         {pick(e, 'role', lang)}
                       </p>
-                      <p className="font-mono text-[10px] text-muted mt-0.5">{pick(e, 'place', lang)}</p>
+                      <p className="font-mono text-[11px] lg:text-[10px] text-muted mt-0.5">{pick(e, 'place', lang)}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -164,14 +164,14 @@ export default function AboutMatrix() {
 
             {/* Capabilities */}
             <FadeIn delay={0.25}>
-              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted mb-4">
+              <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.22em] text-muted mb-4">
                 {isAr ? 'القدرات' : 'Capabilities'}
               </p>
               <div className="flex flex-wrap gap-2">
                 {CAPABILITIES.map((cap) => (
                   <span
                     key={cap}
-                    className="font-mono text-[9px] uppercase tracking-[0.14em] text-soft border border-bright/10 px-3 py-1.5 hover:border-bright hover:text-bright transition-colors cursor-default"
+                    className="font-mono text-[11px] lg:text-[11px] lg:text-[10px] uppercase tracking-[0.14em] text-soft border border-bright/10 px-3 py-1.5 hover:border-bright hover:text-bright transition-colors cursor-default"
                   >
                     {cap}
                   </span>

@@ -86,7 +86,7 @@ function HeadlineBlock({ t, isAr }) {
   }`;
   return (
     <div className="text-center px-4">
-      <TextReveal delay={0.3} className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted mb-4">
+      <TextReveal delay={0.3} className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-muted mb-4">
         {t('hero.available')}
       </TextReveal>
       <TextReveal delay={0.4} className={display}>
@@ -97,7 +97,7 @@ function HeadlineBlock({ t, isAr }) {
       <TextReveal delay={0.55} className={display}>
         {t('hero.line3')}
       </TextReveal>
-      <TextReveal delay={0.7} className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted mt-4">
+      <TextReveal delay={0.7} className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-muted mt-4">
         {t('hero.line4')} {t('hero.line5')} {t('hero.line6')}
       </TextReveal>
     </div>
@@ -108,7 +108,7 @@ function AsideBlock({ t }) {
   return (
     <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 px-6 lg:px-10 w-full">
       {/* Stats */}
-      <div className="hidden sm:block space-y-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+      <div className="hidden sm:block space-y-1.5 font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.18em] text-muted">
         <p><b className="text-bright me-3 font-bold">6+</b>{t('about.stats.years')}</p>
         <p><b className="text-bright me-3 font-bold">80+</b>{t('about.stats.projects')}</p>
         <p><b className="text-bright me-3 font-bold">30+</b>{t('about.stats.clients')}</p>

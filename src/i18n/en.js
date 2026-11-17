@@ -245,4 +245,9 @@ export default {
 
   // ── Misc
   'misc.backToTop':       'Back to top',
+  'a11y.themeOrange':     'Switch to orange theme',
+  'a11y.themeBlack':      'Switch to black theme',
+  'a11y.language':        'Switch to Arabic',
+  'a11y.menuOpen':        'Open menu',
+  'a11y.menuClose':       'Close menu',
 };

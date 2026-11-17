@@ -23,7 +23,7 @@ export default class ErrorBoundary extends Component {
 
     return (
       <div className="min-h-[70vh] flex flex-col items-center justify-center gap-8 px-6 text-center bg-void">
-        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">500</p>
+        <p className="font-mono text-[11px] lg:text-[10px] uppercase tracking-[0.3em] text-accent">500</p>
         <h1 className="font-display text-[clamp(2.6rem,8vw,6rem)] leading-none text-bright">
           Something broke.
         </h1>
